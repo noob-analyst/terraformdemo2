@@ -5,7 +5,7 @@ provider "aws" {
 
 // Create the S3 bucket with public-read ACL
 resource "aws_s3_bucket" "bucket" {
-  bucket = "circleciterraform2"
+  bucket = "terrademo2m"
   website {
     index_document = "index.html"
   }
