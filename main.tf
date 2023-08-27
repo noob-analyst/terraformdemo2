@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "bucket" {
 
 
 // Define IAM policy document for public read access to index.html
-data "aws_iam_policy_document" "public_read_index_html" {
+data "aws_iam_policy_document" "public_read_all" {
   statement {
     effect = "Allow"
     principals {
@@ -33,7 +33,7 @@ data "aws_iam_policy_document" "public_read_index_html" {
 // Attach the public read policy to the bucket
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.bucket.id
-  policy = data.aws_iam_policy_document.public_read_index_html.json
+  policy = data.aws_iam_policy_document.public_read_all.json
 }
 
 
